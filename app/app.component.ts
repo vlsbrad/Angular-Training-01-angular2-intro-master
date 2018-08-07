@@ -6,12 +6,7 @@ import {Component } from '@angular/core';
   moduleId: module.id,
   selector: 'app',
   templateUrl: 'app.component.html',
-  styles:[`
-    header{
-      background-color: forestgreen
-    }
-  `]
-
+  styleUrls:['app.component.css']
 })
 
 export class AppComponent{
