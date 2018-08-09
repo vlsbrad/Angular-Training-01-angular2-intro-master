@@ -1,15 +1,15 @@
 <header>
   <img src='img/angular.svg' />
-  <h1>{{ title }}</h1>
+  <h1>{{ title }} {{ 2+3 }}</h1>
 </header>
 
 <main>
-  <section class="todo-list">
-    <div class="todo-item">
+  <section class="todo-list" *ngIf="todos.length" >
+    <div class="todo-item" *ngFor="let todo of todos">
       <button class="checkbox icon">
         <i class="material-icons">check_box_outline_blank</i>
       </button>
-      <span class="title">Izuchit Angular 2</span>
+      <span class="title">{{ todo }}</span>
       <div class="actions">
         <button class="delete icon">
           <i class="material-icons">delete</i>
@@ -18,16 +18,5 @@
     </div>
 
 
-    <div class="todo-item">
-        <button class="checkbox icon">
-          <i class="material-icons">check_box_outline_blank</i>
-        </button>
-        <span class="title">Napisat prilozhenije</span>
-        <div class="actions">
-          <button class="delete icon">
-            <i class="material-icons">delete</i>
-          </button>
-        </div>
-      </div>
   </section>
 </main>
