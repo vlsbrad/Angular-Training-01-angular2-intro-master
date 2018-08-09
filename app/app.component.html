@@ -4,6 +4,13 @@
 </header>
 
 <main>
+
+
+  <form class="todo-form" (submit)="create($event, titleInput)">
+    <input type="text" placeholder="Chto nuzhno sdelat?" #titleInput>
+    <button type="submit">Dobavit</button>
+  </form>
+
   <section class="todo-list" *ngIf="todos.length" >
     <div class="todo-item" *ngFor="let todo of todos" [class.completed]="todo.completed" >
       <button class="checkbox icon" (click)="toggle(todo)">
