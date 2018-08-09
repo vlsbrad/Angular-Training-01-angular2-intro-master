@@ -19,4 +19,18 @@ const todos = [
 export class AppComponent{
   title = 'Angular 2Do (hello world !!!)';
   todos = todos;
+
+  toggle(todo: any){
+    console.log('toggle', todo);
+    todo.completed = !todo.completed;
+  }
+
+
+  delete(todo: any){
+    let index = this.todos.indexOf(todo);
+    if  (index>-1){
+      this.todos.splice(index, 1);
+    }
+  }
+
 }
