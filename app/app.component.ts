@@ -4,9 +4,9 @@ import {Component } from '@angular/core';
 
 
 const todos = [
-  'Izuchit Java Script',
-  'Izuchit Angular 2',
-  'Napisat prilozhenije'
+  { title: 'Izuchit Java Script', completed: true },
+  { title: 'Izuchit Angular 2', completed: false },
+  { title: 'Napisat prilozhenije', completed: false },
 ];
 
 @Component({
