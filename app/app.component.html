@@ -6,10 +6,9 @@
 <main>
 
 
-  <form class="todo-form" (ngSubmit)="create()">
+  <form class="todo-form" (ngSubmit)="create(); todoForm.reset()"  #todoForm="ngForm">
     <input type="text" name="title" [(ngModel)]="newTodoTitle" placeholder="Chto nuzhno sdelat?" required >
-    <div> Check:  {{ newTodoTitle }} </div>
-    <button type="submit">Dobavit</button>
+    <button type="submit" [disabled]="todoForm.form.invalid">Dobavit</button>
   </form>
 
   <section class="todo-list" *ngIf="todos.length" >
