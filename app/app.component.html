@@ -6,7 +6,7 @@
 <main>
 
 
-  <form class="todo-form" (submit)="create($event, titleInput)">
+  <form class="todo-form" (submit)="create($event, titleInput); titleInput.value = ''">
     <input type="text" placeholder="Chto nuzhno sdelat?" #titleInput>
     <button type="submit">Dobavit</button>
   </form>

@@ -7,7 +7,7 @@ interface ITodo{
   completed: boolean;
 }
 
-class Todo {
+class Todo implements ITodo {
   title: string;
   completed: boolean;
 
@@ -15,7 +15,7 @@ class Todo {
     this.title = title;
     this.completed = completed;
   }
-}
+} 
 
 const todos: ITodo[] = [
   { title: 'Izuchit Java Script', completed: true },
@@ -37,15 +37,8 @@ export class AppComponent{
 
   create(event: Event, input: HTMLInputElement){
     event.preventDefault(); 
-    // let todo: Todo = {
-    //    title: title,
-    //    completed:false
-    // }
     let todo: Todo = new Todo(input.value);
     this.todos.push(todo);
-
-
-    input.value = '';
   }
 
   toggle(todo: ITodo){
