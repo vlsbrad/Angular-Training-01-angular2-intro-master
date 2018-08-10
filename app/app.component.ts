@@ -33,12 +33,14 @@ const todos: ITodo[] = [
 export class AppComponent{
   title: string = 'Angular 2Do (hello world !!!)';
   todos : ITodo[] = todos;
+  newTodoTitle: string = '';
 
 
-  create(event: Event, input: HTMLInputElement){
+  create(){
     event.preventDefault(); 
-    let todo: Todo = new Todo(input.value);
+    let todo: Todo = new Todo(this.newTodoTitle);
     this.todos.push(todo);
+    this.newTodoTitle = '';
   }
 
   toggle(todo: ITodo){

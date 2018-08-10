@@ -6,8 +6,9 @@
 <main>
 
 
-  <form class="todo-form" (submit)="create($event, titleInput); titleInput.value = ''">
-    <input type="text" placeholder="Chto nuzhno sdelat?" #titleInput>
+  <form class="todo-form" (ngSubmit)="create()">
+    <input type="text" name="title" [(ngModel)]="newTodoTitle" placeholder="Chto nuzhno sdelat?" required >
+    <div> Check:  {{ newTodoTitle }} </div>
     <button type="submit">Dobavit</button>
   </form>
 
