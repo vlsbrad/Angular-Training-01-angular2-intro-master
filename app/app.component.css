@@ -2,3 +2,17 @@ header{
   background-color: forestgreen
 }
 
+main {
+  width: 600px;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+todo-form,
+todo-list{
+  width: 100%;
+}

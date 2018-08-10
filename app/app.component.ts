@@ -1,27 +1,7 @@
-import {Component } from '@angular/core';
-
+import { ITodo } from './shared/todo';
 // sample from here: https://www.youtube.com/watch?v=gtCR3FdTIck&index=4&list=PLqHlAwsJRxANlSuRSgldPWsbNkPqVBeFp
 
-interface ITodo{
-  title: string;
-  completed: boolean;
-}
-
-class Todo implements ITodo {
-  title: string;
-  completed: boolean;
-
-  constructor(title: string, completed: boolean = false){
-    this.title = title;
-    this.completed = completed;
-  }
-} 
-
-const todos: ITodo[] = [
-  { title: 'Izuchit Java Script', completed: true },
-  { title: 'Izuchit Angular 2', completed: false },
-  { title: 'Napisat prilozhenije', completed: false },
-];
+import {Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -32,28 +12,8 @@ const todos: ITodo[] = [
 
 export class AppComponent{
   title: string = 'Angular 2Do (hello world !!!)';
-  todos : ITodo[] = todos;
-  newTodoTitle: string = '';
 
 
-  create(){
-    event.preventDefault(); 
-    let todo: Todo = new Todo(this.newTodoTitle);
-    this.todos.push(todo);
-    this.newTodoTitle = '';
-  }
-
-  toggle(todo: ITodo){
-    console.log('toggle', todo);
-    todo.completed = !todo.completed;
-  }
-
-
-  delete(todo: ITodo){
-    let index = this.todos.indexOf(todo);
-    if  (index>-1){
-      this.todos.splice(index, 1);
-    }
-  }
+  
 
 }
