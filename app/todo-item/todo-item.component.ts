@@ -16,11 +16,10 @@ export class TodoItemComponent{
 
 
   toggle(){
-    //console.log('this.todo.completed', this.todo.completed);
     this.todo.completed = !this.todo.completed;
   }
 
   onDelete(){
-    this.delete.emit()
+    this.delete.emit(this.todo);
   }
 }
