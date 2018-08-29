@@ -1,6 +1,6 @@
 import { todos } from './../shared/data';
 import { Todo, ITodo } from './../shared/todo';
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -10,5 +10,17 @@ import { Component } from '@angular/core';
 })
 export class TodoItemComponent{
 
-  todo: Todo =new Todo('dsdsdsdsds');
+  @Input() todo : Todo;
+
+  @Output() delete = new EventEmitter();
+
+
+  toggle(){
+    //console.log('this.todo.completed', this.todo.completed);
+    this.todo.completed = !this.todo.completed;
+  }
+
+  onDelete(){
+    this.delete.emit()
+  }
 }
