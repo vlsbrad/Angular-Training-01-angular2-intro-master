@@ -1,4 +1,4 @@
-<form class="todo-form" (ngSubmit)="create(); todoForm.reset()"  #todoForm="ngForm">
-  <input type="text" name="title" [(ngModel)]="newTodoTitle" placeholder="Chto nuzhno sdelat?" required >
+<form class="todo-form" (ngSubmit)="onSubmit(); todoForm.reset()"  #todoForm="ngForm">
+  <input type="text" name="title" [(ngModel)]="title" placeholder="Chto nuzhno sdelat?" required >
   <button type="submit" [disabled]="todoForm.form.invalid">Dobavit</button>
 </form>

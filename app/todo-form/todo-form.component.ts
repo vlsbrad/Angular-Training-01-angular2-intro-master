@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 })
 export class TodoFormComponent{
 
-  newTodoTitle: string = '';
+  title: string = '';
 
-  create() {
+  @Output() add = new EventEmitter();
 
+  onSubmit() {
+    this.add.emit(this.title); 
   }
 
 
