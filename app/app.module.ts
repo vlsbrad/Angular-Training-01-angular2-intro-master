@@ -1,3 +1,4 @@
+import { TodoService } from './shared/todo.service';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
@@ -18,6 +19,9 @@ import { AppComponent } from './app.component';
     TodoFormComponent,
     TodoListComponent,
     TodoItemComponent
+  ],
+  providers: [
+    TodoService
   ],
   bootstrap: [AppComponent]
 })
